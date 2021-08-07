@@ -1,0 +1,13 @@
+<!-- 
+    - Attribute directives ==> [ngStyle]
+    - Structural directives ==> *ngIf ex: *ngIf="task.assignTo"
+    - Displaying values with interpolation ==> {{ ... }}
+-->
+
+<div [ngStyle]="{'border-color': color}" class="task p-3 mb-3">
+    <h3 [ngStyle]="{'color': color}" class="task-title h6 mb-3 text-center text-capitalize pb-3">{{task.title}}</h3>
+    <p *ngIf="task.assignTo" class="mb-2"><i [ngStyle]="{'color': color}"
+            class="bi bi-person-fill mr-3"></i>{{task.assignTo}}</p>
+    <p class="mb-3"><i [ngStyle]="{'color': color}" class="bi bi-calendar-check-fill mr-3"></i>{{time}}</p>
+    <p *ngIf="task.description" class="task-desc">{{task.description}}</p>
+</div>

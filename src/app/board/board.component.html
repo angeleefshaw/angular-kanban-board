@@ -1,0 +1,19 @@
+<!-- 
+    - Displaying values with interpolation ==> {{ ... }}
+    - Bind values between components : @Input() ==> ex: [task]="task"
+    - Property binding ==> ex: [id]="'task_' + task.id" & [class]="taskWidth"
+    - Event binding ==> (dragover)="onBoardDragOver($event)" & (drop)="onBoardDrop($event)" & (dblclick)="openTaskDetails($event)" (dragstart)='taskDragStart($event)'
+    - Attribute directives ==> [ngStyle]
+    - Structural directives ==> *ngFor="let task of boardTasks"
+-->
+
+<section class="board-wrapper">
+    <h2 [ngStyle]="{'background-color': boardColor}" class="board-title h4 py-3 mb-0 text-center text-capitalize">
+        {{boardType}}</h2>
+    <div (dragover)="onBoardDragOver($event)" (drop)="onBoardDrop($event)" [ngStyle]="{'border-color': boardColor}"
+        class="board p-3 d-flex flex-wrap">
+        <app-task draggable="true" (dblclick)="openTaskDetails($event)" (dragstart)='taskDragStart($event)'
+            [id]="'task_' + task.id" [class]="taskWidth" class="board-task" *ngFor="let task of boardTasks"
+            [task]="task"></app-task>
+    </div>
+</section>

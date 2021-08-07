@@ -1,0 +1,16 @@
+.task {
+
+    background-color: #fff;
+    box-shadow: 1px 1px 15px 5px #eaeaea;
+    border-inline-start: 3px solid transparent;
+
+    &-title {
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    &-desc {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

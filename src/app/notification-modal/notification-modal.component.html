@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Notification</h4>
+    <!-- Event binding ==> (click)="bsModalRef.hide()" -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <!-- 
+    - Structural directives ==> *ngFor
+    - Displaying values with interpolation ==> {{msg}}
+    -->
+    <p *ngFor="let msg of service.notificationMsg" class="mb-2">{{msg}}</p>
+</div>
+<div class="modal-footer">
+    <!-- Event binding ==> (click)="bsModalRef.hide()" -->
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Ok</button>
+</div>

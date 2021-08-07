@@ -1,0 +1,56 @@
+<!-- 
+    - Displaying values with interpolation ==> {{ ... }}
+    - Event binding ==> (click)="bsModalRef.hide()" & (ngSubmit)="onSubmit(editTaskForm)" & (click)="closeTask($event, editTaskForm)"
+    - Directives ==> ngForm
+    - Attribute directives ==> [(NgModel)]
+    - Structural directives ==> *ngIf ex: *ngIf="!taskTitle.valid && taskTitle.touched" & *ngFor="let boardName of boardsTypes"
+    - Property binding ==> ex: [value]="boardName" & [disabled]="!editTaskForm.valid"
+-->
+
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Edit <q class="modal-header-title">{{targetTask.title}}</q> task</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="edit-task-form" ngForm #editTaskForm="ngForm" (ngSubmit)="onSubmit(editTaskForm)">
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" name="title" placeholder="Task Title" class="form-control" [(ngModel)]="title"
+                #taskTitle="ngModel" required>
+            <small *ngIf="!taskTitle.valid && taskTitle.touched" class="form-text text-muted">You should add task's
+                title</small>
+        </div>
+        <div class="form-group">
+            <label>Description: </label>
+            <textarea name="description" placeholder="Task Description" class="form-control" [(ngModel)]="description"
+                #taskDesc="ngModel"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Time Estimate: </label>
+            <input type="number" name="time" placeholder="Time Estimate (in days)" class="form-control"
+                [(ngModel)]="time" #taskTime="ngModel" required>
+            <small *ngIf="!taskTime.valid && taskTime.touched" class="form-text text-muted">You should add time
+                estimate</small>
+        </div>
+        <div class="form-group">
+            <label>Assigned To:</label>
+            <input type="text" name="assignTo" placeholder="Assigned To" class="form-control" [(ngModel)]="assignTo"
+                #taskassignTo="ngModel">
+        </div>
+        <div class="form-group">
+            <label>Board:</label>
+            <select name="board" class="form-control" [(ngModel)]="board">
+                <option [value]="boardName" *ngFor="let boardName of boardsTypes">
+                    {{boardName}}
+                </option>
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="closeTask($event, editTaskForm)">Mark as
+        Closed</button>
+    <button type="submit" form="edit-task-form" [disabled]="!editTaskForm.valid" class="btn btn-primary">Save</button>
+</div>

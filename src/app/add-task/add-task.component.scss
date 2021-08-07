@@ -1,0 +1,10 @@
+.add-task-btn {
+    right: 50px;
+    top: 3.5rem;
+}
+
+@media (min-width: 992px) {
+    .add-task-btn {
+        position: fixed;
+    }
+}

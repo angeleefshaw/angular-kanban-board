@@ -1,0 +1,19 @@
+<header class="py-3 py-lg-5">
+  <h1 class="text-capitalize text-center mb-3 main-color">Kanban boards</h1>
+</header>
+
+<app-add-task></app-add-task>
+
+<!-- boards -->
+
+<section class="container">
+  <div class="row justify-content-center">
+    <!-- 
+      - Structural directives ==> *ngFor
+      - Bind values between components using @Input() ==> [boardType]="board" [boardColor]="boardsColors[i]"
+      - Property binding ==> [class]="colClass"
+     -->
+    <app-board *ngFor="let board of boardsNames; let i = index" [boardType]="board" [boardColor]="boardsColors[i]"
+      [class]="colClass" class="col-12 mb-4 mb-lg-0"></app-board>
+  </div>
+</section>

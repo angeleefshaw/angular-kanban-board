@@ -1,0 +1,44 @@
+@use "sass:map";
+
+@import "../../variables";
+
+.board {
+    min-height: 300px;
+    background-color: #f5faff;
+}
+
+.board-title {
+    color: #fff;
+}
+
+.board, .board-title {
+    border: 2px solid transparent;
+}
+
+.board-task {
+    max-width: calc(100% - 1rem);
+    margin-inline-end: 1rem;
+}
+
+@media (min-width: 992px){
+    .board {
+        height: 67vh;
+        overflow: auto;
+    }
+
+    .board-task.half {
+        width: calc(50% - 0.5rem);
+    }
+
+    .board-task.third {
+        width: calc(33.33% - 0.5rem);
+    }
+
+    .board-task.fourth {
+        width: calc(25% - 0.5rem);
+    }
+    
+    .board-task:nth-child(even){
+        margin-inline-end: 0;
+    }
+}
