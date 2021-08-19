@@ -1,6 +1,6 @@
 # Kanban
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0. Comments have been added and are meant to be an instructional guide of how to use the Angular framework. 
 
 ## Development server
 
