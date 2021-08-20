@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0. Comments have been added and are meant to be an instructional guide of how to use the Angular framework. 
 
+View the live site here ---> https://angeleefshaw.github.io/kanban/
+
 ## Development server
 
 run 'npm install' from within the root directory
