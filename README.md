@@ -1,8 +1,12 @@
 # Kanban
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0. Comments have been added and are meant to be an instructional guide of how to use the Angular framework. 
 
 ## Development server
+
+run 'npm install' from within the root directory
+
+run 'npm install' from within the src folder
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
