@@ -32,4 +32,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Services
 
-There is only one service located on `src/app/services`. The service logic is contained on `tasks.service.ts`.
+There is one service located on `src/app/services`. The service logic is contained on `tasks.service.ts`.
